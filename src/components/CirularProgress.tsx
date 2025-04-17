@@ -21,5 +21,5 @@ function CircularProgressWithLabel(
 }
 
 export const CircularValueLabel = ({ value = 0 }) => {
-  return <CircularProgressWithLabel value={value} color="#3d22a1" />
+  return <CircularProgressWithLabel value={value} color="secondary" />
 }

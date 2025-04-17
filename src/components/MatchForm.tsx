@@ -94,14 +94,14 @@ export function MatchForm() {
       <div className="flex flex-col gap-5">
         {loading
           ? Array.from({ length: 3 }).map((_, index) => (
-            <Skeleton
-              key={index}
-              variant="rounded"
-              width="100%"
-              height={134}
-              animation="pulse"
-            />
-          ))
+              <Skeleton
+                key={index}
+                variant="rounded"
+                width="100%"
+                height={134}
+                animation="pulse"
+              />
+            ))
           : matches.map((match, index) => <MatchCard key={index} {...match} />)}
       </div>
     </div>
