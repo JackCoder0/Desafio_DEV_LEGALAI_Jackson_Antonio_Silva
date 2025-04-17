@@ -33,10 +33,7 @@ export function AutocompleteMUI({
     }
   }, [value, selectedvalue])
 
-  const handleChange = (
-    event: React.SyntheticEvent,
-    value: valueProps | null,
-  ) => {
+  const handleChange = (_: React.SyntheticEvent, value: valueProps | null) => {
     const newvalue = value?.value || ''
     setSelectedvalue(newvalue)
 
