@@ -28,7 +28,9 @@ type MatchForm = z.infer<typeof matchSchema>
 export function MatchForm() {
   const [cidades, setCidades] = useState<valueProps[]>([])
   const [municipios, setMunicipios] = useState<valueProps[]>([])
-  const [estadoSelecionado, setEstadoSelecionado] = useState<valueProps | null>(null)
+  const [estadoSelecionado, setEstadoSelecionado] = useState<valueProps | null>(
+    null,
+  )
   const [matches, setMatches] = useState<Match[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -118,7 +120,8 @@ export function MatchForm() {
             value={cidades}
             onChange={(e) => {
               const selectedOption =
-                cidades.find((cidade) => cidade.value === e.target.value) || null
+                cidades.find((cidade) => cidade.value === e.target.value) ||
+                null
               setEstadoSelecionado(selectedOption)
               handleEstadoChange(selectedOption)
             }}
@@ -150,14 +153,14 @@ export function MatchForm() {
       <div className="flex flex-col gap-5">
         {loading
           ? Array.from({ length: 3 }).map((_, index) => (
-            <Skeleton
-              key={index}
-              variant="rounded"
-              width="100%"
-              height={134}
-              animation="pulse"
-            />
-          ))
+              <Skeleton
+                key={index}
+                variant="rounded"
+                width="100%"
+                height={134}
+                animation="pulse"
+              />
+            ))
           : matches.map((match, index) => <MatchCard key={index} {...match} />)}
       </div>
     </div>
